@@ -6,7 +6,7 @@
 /*   By: ttresori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 03:55:04 by ttresori          #+#    #+#             */
-/*   Updated: 2018/12/03 16:40:37 by ttresori         ###   ########.fr       */
+/*   Updated: 2018/12/17 04:09:21 by achavy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ void	unset_env(t_file *s_file)
 {
 	int		pos;
 	char	**search;
-	char	**new_env;
 
 	pos = 0;
-	new_env = NULL;
 	if (s_file->comm[1] == NULL)
 		return ;
 	if (!(search = ft_strsplit(s_file->comm[1], '=')))
@@ -45,10 +43,8 @@ void	unset_env(t_file *s_file)
 		search = free_split(search);
 		return ;
 	}
-	new_env = remove_in_tab(s_file->env, s_file->size_env, pos);
-	free_env(s_file);
+	s_file->env = remove_in_tab(s_file->env, s_file->size_env, pos);
 	search = free_split(search);
-	s_file->env = new_env;
 	s_file->size_env--;
 }
 

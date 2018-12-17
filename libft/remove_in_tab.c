@@ -6,7 +6,7 @@
 /*   By: ttresori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 05:32:02 by ttresori          #+#    #+#             */
-/*   Updated: 2018/12/02 18:52:15 by ttresori         ###   ########.fr       */
+/*   Updated: 2018/12/17 05:32:21 by achavy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ char	**remove_in_tab(char **tab, int size, int pos)
 			if (!(new[i] = ft_strdup(tab[i2])))
 				return (NULL);
 			i++;
-			i2++;
 		}
-		else
-			i2++;
+		free(tab[i2]);
+		i2++;
 	}
 	new[i] = NULL;
+	free(tab);
 	return (new);
 }

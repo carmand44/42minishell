@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttresori <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: achavy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 05:42:58 by ttresori          #+#    #+#             */
-/*   Updated: 2018/12/03 16:58:05 by ttresori         ###   ########.fr       */
+/*   Created: 2018/12/17 00:46:24 by achavy            #+#    #+#             */
+/*   Updated: 2018/12/17 02:23:18 by achavy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,13 @@ char	*help_do_cd(t_file *s_file)
 	if (s_file->comm[1] == NULL)
 	{
 		pos = search_env(s_file->env, s_file->size_env, "HOME");
-		if (pos == -1)
+		if (pos == -1 && s_file->home == NULL)
 		{
 			print_error_no_var_env("HOME");
 			return (NULL);
 		}
+		if (pos == -1)
+			return (ft_strdup(s_file->home));
 		if (!(tmp = ft_strsplit(s_file->env[pos], '=')))
 			return (NULL);
 		if (!(path = ft_strdup(tmp[1])))
@@ -98,11 +100,13 @@ char	*cd_go_to_home(t_file *s_file, char *path)
 	pos = -1;
 	free(path);
 	pos = search_env(s_file->env, s_file->size_env, "HOME");
-	if (pos == -1)
+	if (pos == -1 && s_file->home == NULL)
 	{
 		print_error_no_var_env("HOME");
 		return (NULL);
 	}
+	if (pos == -1)
+		return (ft_strdup(s_file->home));
 	if (!(tmp = ft_strsplit(s_file->env[pos], '='))
 	|| (!(path = ft_strdup(tmp[1]))))
 		return (NULL);

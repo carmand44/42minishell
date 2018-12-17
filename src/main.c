@@ -6,7 +6,7 @@
 /*   By: ttresori <rammsteinluffy@gmail.co...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 22:56:08 by ttresori          #+#    #+#             */
-/*   Updated: 2018/11/29 13:23:40 by ttresori         ###   ########.fr       */
+/*   Updated: 2018/12/17 03:42:06 by achavy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	core(char **env)
 
 	s_file.size_comm = 0;
 	s_file.comm = NULL;
+	s_file.home = NULL;
 	if (!(s_file.pwd = ft_strdup(getcwd(buf, 256)))
 	|| !(s_file.old_pwd = ft_strdup(s_file.pwd))
 	|| (!(cpy_env(&s_file, env))))
@@ -48,5 +49,6 @@ int		main(int argc, char **argv, char **env)
 	core(env);
 	(void)argc;
 	(void)argv;
+	exit(0);
 	return (0);
 }

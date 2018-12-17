@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ttresori <ttresori@student.42.fr>          +#+  +:+       +#+         #
+#    By: achavy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/11/22 21:43:02 by carmand           #+#    #+#              #
-#    Updated: 2018/12/03 19:17:45 by ttresori         ###   ########.fr        #
+#    Created: 2018/12/16 23:21:58 by achavy            #+#    #+#              #
+#    Updated: 2018/12/17 01:14:05 by achavy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ = $(SRC:.c=.o)
 LIBDIR = libft
 LIB = ft
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 all: $(LIBDIR)/lib$(LIB).a $(OBJDIR) $(NAME)
 
