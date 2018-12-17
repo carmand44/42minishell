@@ -6,7 +6,7 @@
 /*   By: achavy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 23:37:36 by achavy            #+#    #+#             */
-/*   Updated: 2018/12/17 06:06:21 by achavy           ###   ########.fr       */
+/*   Updated: 2018/12/17 06:09:20 by achavy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,12 @@ int		place_home(t_file *s_file, int i)
 	tmp2 = NULL;
 	if (!(get_home(s_file)))
 		return (1);
+	tmp3 = ft_strchr(s_file->comm[i], '~');
 	if (!(tmp = ft_strndup(s_file->comm[i], ft_strlen(s_file->comm[i])
-	- ft_strlen(ft_strchr(s_file->comm[i], '~'))))
+	- ft_strlen(tmp3)))
 	|| !(tmp2 = ft_strjoin(tmp, s_file->home)))
 		return (0);
 	free(tmp);
-	tmp3 = ft_strchr(s_file->comm[i], '~');
 	if (!(tmp = ft_strjoin(tmp2, &tmp3[1])))
 		return (0);
 	free(tmp2);

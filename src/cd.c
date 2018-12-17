@@ -6,7 +6,7 @@
 /*   By: achavy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 00:46:24 by achavy            #+#    #+#             */
-/*   Updated: 2018/12/17 02:23:18 by achavy           ###   ########.fr       */
+/*   Updated: 2018/12/17 06:18:57 by achavy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,25 +64,15 @@ void	modify_in_env(t_file *s_file)
 char	*help_do_cd(t_file *s_file)
 {
 	char	*path;
-	char	**tmp;
-	int		pos;
 
-	pos = -1;
 	if (s_file->comm[1] == NULL)
 	{
-		pos = search_env(s_file->env, s_file->size_env, "HOME");
-		if (pos == -1 && s_file->home == NULL)
+		if (!(get_home(s_file)))
 		{
 			print_error_no_var_env("HOME");
 			return (NULL);
 		}
-		if (pos == -1)
-			return (ft_strdup(s_file->home));
-		if (!(tmp = ft_strsplit(s_file->env[pos], '=')))
-			return (NULL);
-		if (!(path = ft_strdup(tmp[1])))
-			return (NULL);
-		free_split(tmp);
+		return (ft_strdup(s_file->home));
 	}
 	else
 	{
