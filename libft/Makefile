@@ -6,7 +6,7 @@
 #    By: ttresori <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/30 22:10:23 by ttresori          #+#    #+#              #
-#    Updated: 2018/12/01 14:19:40 by ttresori         ###   ########.fr        #
+#    Updated: 2018/12/21 19:23:07 by achavy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ OBJ = $(SRC:.c=.o)
 
 LIB = libft.h
 
-CC = gcc -Wall -Werror -Wextra -g
+CC = gcc -Wall -Werror -Wextra
 
 .PHONY : all clean fclean re
 

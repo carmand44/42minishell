@@ -6,7 +6,7 @@
 #    By: achavy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/16 23:21:58 by achavy            #+#    #+#              #
-#    Updated: 2018/12/17 01:14:05 by achavy           ###   ########.fr        #
+#    Updated: 2018/12/21 19:22:51 by achavy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ = $(SRC:.c=.o)
 LIBDIR = libft
 LIB = ft
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(LIBDIR)/lib$(LIB).a $(OBJDIR) $(NAME)
 
