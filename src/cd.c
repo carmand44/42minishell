@@ -6,7 +6,7 @@
 /*   By: achavy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 00:46:24 by achavy            #+#    #+#             */
-/*   Updated: 2018/12/17 06:18:57 by achavy           ###   ########.fr       */
+/*   Updated: 2018/12/21 19:25:40 by achavy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,9 +118,6 @@ void	do_cd(t_file *s_file)
 	}
 	else if (path[0] == '-' && path[1] == '\0')
 	{
-		ft_putstr(RED);
-		ft_putstr(s_file->old_pwd);
-		ft_putendl(NORMAL);
 		free(path);
 		if (!(path = ft_strdup(s_file->old_pwd)))
 			return ;

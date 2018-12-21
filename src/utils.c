@@ -6,7 +6,7 @@
 /*   By: ttresori <rammsteinluffy@gmail.co...>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 23:18:52 by ttresori          #+#    #+#             */
-/*   Updated: 2018/12/17 02:24:17 by achavy           ###   ########.fr       */
+/*   Updated: 2018/12/21 19:25:18 by achavy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	exec_comm(t_file *s_file, char *bin)
 		wait(0);
 	if (father == 0)
 	{
-		ft_putendl(bin);
 		execve(bin, s_file->comm, s_file->env);
 		ft_putstr_fd("minishell: command not found: ", 2);
 		ft_putendl_fd(s_file->comm[0], 2);
