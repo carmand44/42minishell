@@ -6,7 +6,7 @@
 /*   By: ttresori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 01:51:19 by ttresori          #+#    #+#             */
-/*   Updated: 2018/12/17 04:31:20 by achavy           ###   ########.fr       */
+/*   Updated: 2018/12/21 19:29:52 by achavy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,13 @@
 void	do_echo(t_file *s_file)
 {
 	int i;
-	int i2;
 
 	i = 1;
-	i2 = 0;
 	while (s_file->comm[i] != NULL)
 	{
-		while (s_file->comm[i][i2] != '\0')
-		{
-			while (s_file->comm[i][i2] == '"')
-				i2++;
-			ft_putchar(s_file->comm[i][i2]);
-			i2++;
-		}
-		i++;
-		i2 = 0;
+		ft_putstr(s_file->comm[i]);
 		ft_putchar(' ');
+		i++;
 	}
 	ft_putchar('\n');
 }

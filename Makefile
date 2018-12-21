@@ -6,7 +6,7 @@
 #    By: achavy <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/16 23:21:58 by achavy            #+#    #+#              #
-#    Updated: 2018/12/21 19:22:51 by achavy           ###   ########.fr        #
+#    Updated: 2018/12/21 19:27:23 by achavy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,12 @@ OBJDIR = obj
 OBJ = $(SRC:.c=.o)
 
 LIBDIR = libft
-LIB = ft
 
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(LIBDIR)/lib$(LIB).a $(OBJDIR) $(NAME)
+all: $(LIBDIR)/libft.a $(OBJDIR) $(NAME)
 
-$(LIBDIR)/lib$(LIB).a:
+$(LIBDIR)/libft.a:
 	@tput setaf 90 ; echo [COMPILE]
 	@make -C $(LIBDIR)
 
@@ -33,7 +32,7 @@ $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 
 $(NAME): $(addprefix $(OBJDIR)/, $(OBJ))
-	@$(CC) $(CFLAGS) $(addprefix $(OBJDIR)/, $(OBJ)) -o $(NAME) -L $(LIBDIR) -l $(LIB)
+	@$(CC) $(CFLAGS) $(addprefix $(OBJDIR)/, $(OBJ)) -o $(NAME) -L $(LIBDIR) -lft
 	@tput setaf 90 ; echo [DONE]
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
